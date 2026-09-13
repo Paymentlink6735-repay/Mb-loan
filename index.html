@@ -3,84 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Loan Details</title>
+
+    <title>Customer Loan Profile</title>
 
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            padding: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
         }
 
-        .page {
-            max-width: 600px;
-            margin: auto;
+        .header {
+            background: #111827;
+            color: white;
+            padding: 22px 30px;
+        }
+
+        .header h1 {
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .header p {
+            margin-top: 5px;
+            color: #9ca3af;
+            font-size: 13px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .customer-card {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            text-align: center;
+            border-radius: 14px;
+            padding: 25px;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
             margin-bottom: 25px;
         }
 
-        .customer {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 20px;
+        .customer-label {
+            color: #6b7280;
+            font-size: 13px;
+            margin-bottom: 7px;
+        }
+
+        .customer-name {
+            font-size: 25px;
+            font-weight: 700;
+        }
+
+        .summary {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 22px;
+        }
+
+        .summary-box {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 16px;
+        }
+
+        .summary-box span {
+            display: block;
+            color: #6b7280;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+
+        .summary-box strong {
+            font-size: 21px;
+        }
+
+        .section-title {
+            font-size: 19px;
+            margin-bottom: 15px;
+        }
+
+        .loan-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .loan {
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 8px;
-            font-weight: bold;
+            background: white;
+            border-radius: 12px;
+            padding: 19px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
         }
 
-        .paid {
-            background: #dff5e3;
-            color: #16752b;
+        .loan-name {
+            font-weight: 600;
+            font-size: 16px;
         }
 
-        .not-paid {
-            background: #ffe1e1;
-            color: #c62828;
+        .loan-number {
+            color: #9ca3af;
+            font-size: 12px;
+            margin-top: 5px;
         }
 
         .status {
-            float: right;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .paid {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .not-paid {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        footer {
+            text-align: center;
+            color: #9ca3af;
+            font-size: 12px;
+            margin-top: 35px;
+            padding-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 18px 20px;
+            }
+
+            .container {
+                margin-top: 20px;
+            }
+
+            .summary {
+                grid-template-columns: 1fr;
+            }
+
+            .loan {
+                padding: 16px;
+            }
+
+            .customer-name {
+                font-size: 21px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="page">
+    <header class="header">
+        <h1>Loan Management</h1>
+        <p>Customer Loan Profile</p>
+    </header>
 
-    <h2>Customer Loan Details</h2>
+    <main class="container">
 
-    <div class="customer">
-        Customer Name: SRIJA DEY
-    </div>
+        <!-- Customer Information -->
+        <div class="customer-card">
 
-    <div class="loan paid">
-        KINGDOM MB
-        <span class="status">PAID ✓</span>
-    </div>
+            <div class="customer-label">
+                CUSTOMER NAME
+            </div>
 
-    <div class="loan paid">
-        SUPRA LOAN
-        <span class="status">PAID ✓</span>
-    </div>
+            <div class="customer-name">
+                SRIJA DEY
+            </div>
 
-    <div class="loan not-paid">
-        SWIFT RUPPE
-        <span class="status">NOT PAID ✗</span>
-    </div>
+            <!-- Summary -->
+            <div class="summary">
 
-</div>
+                <div class="summary-box">
+                    <span>Total Loans</span>
+                    <strong>3</strong>
+                </div>
+
+                <div class="summary-box">
+                    <span>Paid Loans</span>
+                    <strong>2</strong>
+                </div>
+
+                <div class="summary-box">
+                    <span>Pending Loans</span>
+                    <strong>1</strong>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Loan Details -->
+        <h2 class="section-title">
+            Loan Details
+        </h2>
+
+        <div class="loan-list">
+
+            <div class="loan">
+                <div>
+                    <div class="loan-name">
+                        KINGDOM MB
+                    </div>
+                    <div class="loan-number">
+                        Loan Status
+                    </div>
+                </div>
+
+                <span class="status paid">
+                    PAID ✓
+                </span>
+            </div>
+
+
+            <div class="loan">
+                <div>
+                    <div class="loan-name">
+                        SUPRA LOAN
+                    </div>
+                    <div class="loan-number">
+                        Loan Status
+                    </div>
+                </div>
+
+                <span class="status paid">
+                    PAID ✓
+                </span>
+            </div>
+
+
+            <div class="loan">
+                <div>
+                    <div class="loan-name">
+                        SWIFT RUPPE
+                    </div>
+                    <div class="loan-number">
+                        Loan Status
+                    </div>
+                </div>
+
+                <span class="status not-paid">
+                    NOT PAID
+                </span>
+            </div>
+
+        </div>
+
+        <footer>
+            © 2026 Loan Management System
+        </footer>
+
+    </main>
 
 </body>
 </html>
