@@ -1,1 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Loan Details</title>
 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 30px;
+        }
+
+        .page {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .customer {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .loan {
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .paid {
+            background: #dff5e3;
+            color: #16752b;
+        }
+
+        .not-paid {
+            background: #ffe1e1;
+            color: #c62828;
+        }
+
+        .status {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page">
+
+    <h2>Customer Loan Details</h2>
+
+    <div class="customer">
+        Customer Name: SRIJA DEY
+    </div>
+
+    <div class="loan paid">
+        KINGDOM MB
+        <span class="status">PAID ✓</span>
+    </div>
+
+    <div class="loan paid">
+        SUPRA LOAN
+        <span class="status">PAID ✓</span>
+    </div>
+
+    <div class="loan not-paid">
+        SWIFT RUPPE
+        <span class="status">NOT PAID ✗</span>
+    </div>
+
+</div>
+
+</body>
+</html>
